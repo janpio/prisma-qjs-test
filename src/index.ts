@@ -9,10 +9,15 @@ class TestCase {
     public internal = new PrismaClient({ log: [{ level: 'query', emit: 'event' }] });
 
     constructor () {
-        this.internal.user.findFirst();
+    }
+
+    async getUser() {
+        const user = await this.internal.user.findFirst();
+        console.log({user})
     }
 }
 
 console.log('hello?');
 
-new TestCase();
+const testcase = new TestCase();
+await testcase.getUser();
