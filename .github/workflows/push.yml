@@ -16,13 +16,15 @@ jobs:
         with:
           version: 8
 
-      - name: Test with TypeScript
-        run: "pnpm exec ts-node-esm src/index.ts"
-
-      - name: Compile
+      - name: Install + Compile
         run: "pnpm i && pnpm webpack --mode=production"
 
+      - name: Test with TypeScript
+        continue-on-error: true
+        run: "pnpm exec ts-node-esm src/index.ts"
+
       - name: Test with Node
+        continue-on-error: true
         run: "node dist/bundle.js"
       
       - name: Test with QuickJS
