@@ -24,4 +24,4 @@ jobs:
       - name: Run with QuickJS
         uses: quickjs-actions/quickjs-alpine/@v0.0.1
         with:
-          mainFile: dist/bundle.js
+          mainFile: dist/bundle
