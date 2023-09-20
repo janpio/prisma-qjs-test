@@ -3,7 +3,7 @@ import 'react-native-polyfill';
 import "core-js";
 
 
-import { PrismaClient } from '@prisma/client';
+import { PrismaClient } from '@prisma/client/edge.js';
 
 class TestCase {
     public internal = new PrismaClient({ log: [{ level: 'query', emit: 'event' }] });
