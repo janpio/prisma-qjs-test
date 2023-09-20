@@ -13,11 +13,14 @@ class TestCase {
 
     async getUser() {
         const user = await this.internal.user.findFirst();
-        console.log({user})
+        return user
     }
 }
 
 console.log('hello?');
 
 const testcase = new TestCase();
-await testcase.getUser();
+testcase.getUser().then((user) => {
+    console.log(user);
+});
+  
