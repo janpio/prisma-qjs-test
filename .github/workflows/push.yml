@@ -17,7 +17,7 @@ jobs:
           version: 8
 
       - name: Test with TypeScript
-        run: "npx ts-node-esm src/index.ts"
+        run: "pnpm exec ts-node-esm src/index.ts"
 
       - name: Compile
         run: "pnpm i && pnpm webpack --mode=production"
