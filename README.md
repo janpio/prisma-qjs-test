@@ -1,1 +1,1 @@
-Minimum implementation case for testing compatibility issues in QuickJS
+Minimum implementation case for testing compatibility issues in QuickJS.
