@@ -20,7 +20,7 @@ jobs:
           version: 8
 
       - name: Install + Compile + Beautify
-        run: "pnpm i && pnpm webpack --mode=development && pnpm js-beautify ./dist/bundle.js --replace"
+        run: "pnpm i && pnpm webpack --mode=production && pnpm js-beautify ./dist/bundle.js --replace"
 
       - name: Test with TypeScript
         continue-on-error: true
