@@ -16,9 +16,15 @@ jobs:
         with:
           version: 8
 
+      - name: Test with TypeScript
+        run: "npx ts-node-esm src/index.ts"
+
       - name: Compile
         run: "pnpm i && pnpm webpack --mode=production"
 
+      - name: Test with Node
+        run: "node dist/bundle.js"
+      
       - name: Test with QuickJS
         uses: refracturemedia/quickjs-gh-action/@v0.1.0
         with:
