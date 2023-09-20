@@ -33,4 +33,4 @@ jobs:
       - name: Test with QuickJS
         uses: refracturemedia/quickjs-gh-action/@v0.1.0
         with:
-          mainFile: dist/bundle.js
+          mainFile: "--unhandled-rejection dist/bundle.js"

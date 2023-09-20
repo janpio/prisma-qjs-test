@@ -2,7 +2,6 @@ import 'react-native-polyfill';
 // import 'core-js/actual/url';
 import "core-js";
 
-
 import { PrismaClient } from '@prisma/client/edge.js';
 
 class TestCase {
