@@ -23,6 +23,7 @@
     "@peculiar/webcrypto": "^1.4.3",
     "@prisma/client": "^5.3.1",
     "core-js": "^3.32.2",
+    "dotenv-cli": "^7.3.0",
     "react-native-polyfill": "^1.2.1",
     "ts-node": "^10.9.1",
     "typescript": "^5.2.2"
