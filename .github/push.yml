@@ -1,0 +1,23 @@
+name: Test
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    name: Test
+    steps:
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
+      - name: Compile
+        run: "pnpm i && pnpm webpack"
+
+      - name: Run with QuickJS
+        uses: quickjs-actions/quickjs-alpine/@v0.0.1
+        with:
+          mainFile: dist/bundle.js
