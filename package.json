@@ -1,0 +1,28 @@
+{
+  "name": "prisma-qjs-test",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "exports": "./index.js",
+  "files": [
+    "/lib"
+  ],
+  "scripts": {
+    "test": "webpack --mode=production && echo \"\n[Test] bundle compiled, running...\n\" && qjs ./dist/bundle.js"
+  },
+  "keywords": [],
+  "author": "MulverineX",
+  "license": "MIT",
+  "devDependencies": {
+    "prisma": "^5.3.1",
+    "ts-loader": "^9.4.4",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {
+    "@peculiar/webcrypto": "^1.4.3",
+    "@prisma/client": "^5.3.1",
+    "core-js": "^3.32.2",
+    "react-native-polyfill": "^1.2.1"
+  }
+}
