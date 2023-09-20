@@ -21,7 +21,7 @@ jobs:
       - name: Compile
         run: "pnpm i && pnpm webpack --mode=production"
 
-      - name: Run with QuickJS
-        uses: quickjs-actions/quickjs-alpine/@v0.0.1
+      - name: Test with QuickJS
+        uses: refracturemedia/quickjs-gh-action/@v0.1.0
         with:
-          mainFile: dist/bundle
+          mainFile: dist/bundle.js
