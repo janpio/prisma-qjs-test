@@ -10,12 +10,16 @@ jobs:
     runs-on: ubuntu-latest
     name: Test
     steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 2
+
       - uses: pnpm/action-setup@v2
         with:
           version: 8
 
       - name: Compile
-        run: "pnpm i && pnpm webpack"
+        run: "pnpm i && pnpm webpack --mode=production"
 
       - name: Run with QuickJS
         uses: quickjs-actions/quickjs-alpine/@v0.0.1
