@@ -26,6 +26,7 @@
     "@prisma/client": "^5.3.1",
     "core-js": "^3.32.2",
     "dotenv-cli": "^7.3.0",
+    "js-beautify": "^1.14.9",
     "react-native-polyfill": "^1.2.1"
   }
 }
