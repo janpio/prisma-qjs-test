@@ -3,6 +3,9 @@ name: Test
 on:
   push:
 
+env:
+  DATABASE_URL: ${{ secrets.DATABASE_URL }}
+
 jobs:
   test:
     runs-on: ubuntu-latest
