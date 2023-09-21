@@ -3,6 +3,9 @@ name: Test
 on:
   push:
 
+env:
+  DATABASE_URL: ${{ secrets.DATABASE_URL }}
+
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -16,10 +19,18 @@ jobs:
         with:
           version: 8
 
-      - name: Compile
-        run: "pnpm i && pnpm webpack --mode=production"
+      - name: Install + Compile + Beautify
+        run: "pnpm i && pnpm webpack --mode=production && pnpm js-beautify ./dist/bundle.js --replace"
 
+      - name: Test with TypeScript
+        continue-on-error: true
+        run: "pnpm exec ts-node-esm src/index.ts"
+
+      - name: Test with Node
+        continue-on-error: true
+        run: "node dist/bundle.js"
+      
       - name: Test with QuickJS
         uses: refracturemedia/quickjs-gh-action/@v0.1.0
         with:
-          mainFile: dist/bundle.js
+          mainFile: "--unhandled-rejection dist/bundle.js"
