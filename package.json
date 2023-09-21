@@ -8,7 +8,13 @@
     "/lib"
   ],
   "scripts": {
-    "test": "webpack --mode=production && echo \"\n[Test] bundle compiled, running...\n\" && qjs ./dist/bundle.js"
+    "test": "webpack --mode=production && echo \"\n[Test] bundle compiled, running...\n\" && qjs --unhandled-rejection ./dist/bundle.js",
+    "webpack": "webpack --mode=production",
+    "beautify": "js-beautify ./dist/bundle.js --replace",
+    "js": "dotenv node dist/bundle.js",
+    "ts": "dotenv ts-node-esm src/index.ts",
+    "install-quickjs": "git clone https://github.com/bellard/quickjs && cd quickjs && make && sudo make install",
+    "qjs": "qjs --unhandled-rejection ./dist/bundle.js"
   },
   "keywords": [],
   "author": "MulverineX",
